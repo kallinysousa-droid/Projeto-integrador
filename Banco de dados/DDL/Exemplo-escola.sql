@@ -156,3 +156,51 @@ ON DELETE RESTRICT;
 
 -- Apaga o Banco de Dados
 DROP DATABASE IF EXISTS escola;
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- Na tabela professorcolocar o codigo abaixo
+-- Serve para selecionar todos (*) os professores (FROM)
+SELECT *
+FROM professores
+
+
+-- * vai selecionar todos os FROM professores com o WHERE nome = "Mateus" para selecionar todos os professores com o nome Mateus
+SELECT *
+FROM professores
+WHERE nome = "Mateus"
+
+-- Vai selecionar * (todos) os FROM na tabela professores (WHERE) quando id_professor for 4
+SELECT *
+FROM professores
+WHERE id_professor= "4"
+
+-- Vai selecionar * (todos ) os FROM na tabela alunos (WHERE) quando nota for > 8;
+SELECT *
+FROM alunos 
+WHERE nota > 8;
+
+UPDATE professores
+SET telefone='(63) 98888-1111'
+WHERE id_professor= '1';
+
+UPDATE professores
+SET telefone = '(63) 98888-1111'
+WHERE id_professor= '1'
+
+
+UPDATE professores
+SET especialidade = 'Matematica'
+WHERE id_professor= '4'
+
+
+UPDATE cursos
+SET carga_horaria = '140'
+WHERE id_curso= '1'
+
+DELETE FROM disciplinas
+WHERE id_disciplina= '4';
+
+
+DELETE FROM turmas
+WHERE id_turma= '1 ';
+
