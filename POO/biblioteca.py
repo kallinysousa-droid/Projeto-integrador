@@ -76,5 +76,9 @@ class Livro:
         print("Sinopse: Prestes a morrer, o pai da jovem Christine Daaé...")
 
 
+# class cria uma classe que define um molde
+#  __init__ irá iniciar o objeto quando ele é criado e definir os que ele terá
+#  self funciona para definir o atributo. self.nome irá  definir o atributo na dentro do objeto 
+#  print funciona para imprimir os resultados que está sendo criado 
 
 
