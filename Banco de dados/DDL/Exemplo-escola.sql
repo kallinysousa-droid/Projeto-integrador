@@ -158,7 +158,7 @@ ON DELETE RESTRICT;
 DROP DATABASE IF EXISTS escola;
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--- Na tabela professorcolocar o codigo abaixo
+-- Na tabela professor colocar o codigo abaixo
 -- Serve para selecionar todos (*) os professores (FROM)
 SELECT *
 FROM professores
