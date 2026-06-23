@@ -29,7 +29,7 @@ class Autores:
         self.nome = nome
         self.email = email
         self.senha_hash = senha_hash
-        self.especializacao =  especializacao_autor
+        self.especializacao = especializacao_autor
         self.dataautor_nascimento = dataautor_nascimento
         self.quantilivro = quantilivro
 
@@ -37,7 +37,7 @@ class Autores:
 # Classe Gênero
 # ====================================
 class Genero:
-    def __init__(self, id_genero, tipogenero, faixaetaria, generolivro): # Adicionado : e espaço no def
+    def __init__(self, id_genero, tipogenero, faixaetaria, generolivro): 
         self.id_genero = id_genero
         self.tipogenero = tipogenero
         self.faixaetaria = faixaetaria
@@ -47,7 +47,7 @@ class Genero:
 # Classe Livros
 # ====================================
 class Livro:
-    def __init__(self, id_livro, titulo, sinopse, sequencia, genero, autores, bibliotecario, cliente): # Adicionado : e organização dos parâmetros
+    def __init__(self, id_livro, titulo, sinopse, sequencia, genero, autores, bibliotecario, cliente): 
         self.id_livro = id_livro
         self.titulo = titulo
         self.sequencia = sequencia
@@ -63,22 +63,50 @@ class Livro:
         print("===== DETALHES DO LIVRO =====")
         print(f"Título: {self.titulo}")
         print(f"Sequência: {self.sequencia}")
-        print(f"Autor: {self.autores.nome}") # Buscando o nome direto da classe Autores
+        print(f"Autor: {self.autores.nome}") 
         print(f"Gênero: {self.genero.tipogenero} (Idade: {self.genero.faixaetaria})")
         print(f"Cadastrado por Bibliotecário: {self.bibliotecario.nome}")
         print(f"Reservado por Cliente: {self.cliente.nome}")
         print(f"\nSinopse: {self.sinopse}")
 
     def exibir_livro_estatico(self):
-        
         print("Título: O Fantasma da Ópera")
         print("Sequência: Não contém")
         print("Sinopse: Prestes a morrer, o pai da jovem Christine Daaé...")
 
 
-# class cria uma classe que define um molde
-#  __init__ irá iniciar o objeto quando ele é criado e definir os que ele terá
-#  self funciona para definir o atributo. self.nome irá  definir o atributo na dentro do objeto 
-#  print funciona para imprimir os resultados que está sendo criado 
+# ====================================
+# CRIAÇÃO DOS OBJETOS
+# ====================================
+
+# 1. Criando um objeto da classe Bibliotecario
+bibliotecario_1 = Bibliotecario(1, "Ana Souza", "ana.souza@email.com", "hash_senha_123")
+
+# 2. Criando um objeto da classe Cliente
+cliente_1 = Cliente(101, "Carlos Silva", "carlos.silva@email.com", "hash_senha_456", "123.456.789-00", "15/05/1995")
+
+# 3. Criando um objeto da classe Autores
+autor_1 = Autores(50, "Gaston Leroux", "Romance Gótico/Mistério", "gaston@email.com", "hash_autor_789", "06/05/1868", 15)
+
+# 4. Criando um objeto da classe Genero
+genero_1 = Genero(5, "Romance de Mistério", "14 anos", "Ficção")
+
+# 5. Criando um objeto da classe Livro (passando os objetos anteriores como parâmetros)
+livro_1 = Livro(
+    id_livro=1001, 
+    titulo="O Fantasma da Ópera", 
+    sinopse="Prestes a morrer, o pai da jovem Christine Daaé promete que um anjo da música a protegerá.", 
+    sequencia="Volume Único", 
+    genero=genero_1,          # Objeto Genero 
+    autores=autor_1,         # Objeto Autores 
+    bibliotecario=bibliotecario_1, # Objeto Bibliotecario 
+    cliente=cliente_1        # Objeto Cliente 
+)
+
+# ====================================
+# TESTANDO O CÓDIGO
+# ====================================
+# Chamando o método para exibir as informações dinâmicas do objeto criado
+livro_1.exibir_detalhes_livro()
 
 
